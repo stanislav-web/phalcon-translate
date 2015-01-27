@@ -76,18 +76,20 @@ class Translate extends TranslateAdapter {
     public function get($signature) {
 
         $file = $this->path.$this->language.DIRECTORY_SEPARATOR.$signature.'.php';
+
         if(!isset($this->required[$file])) {
 
             if (file_exists($file)) {
 
                 $content = require_once $file;
                 $this->required[$file] = true;
+
                 parent::__construct(['content' => $content]);
 
             }
-        }
-        else {
-            throw new Exception('Could not find translate file: '.$file);
+            else {
+                throw new Exception('Could not find translate file: '.$file);
+            }
         }
     }
 }
