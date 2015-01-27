@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Test\\Translate\\TranslateTest' => $baseDir . '/phpunit/src/Translate/TranslateTest.php',
+    'Translate\\Translate' => $baseDir . '/src/Translate/Translate.php',
 );

@@ -12,19 +12,24 @@ $coverage->setData(array (
     64 => NULL,
     73 => 
     array (
+      0 => 'Test\\Translate\\TranslateTest::testSetLanguage',
     ),
     75 => 
     array (
+      0 => 'Test\\Translate\\TranslateTest::testSetLanguage',
     ),
     76 => NULL,
     87 => 
     array (
+      0 => 'Test\\Translate\\TranslateTest::testAssign',
     ),
     89 => 
     array (
+      0 => 'Test\\Translate\\TranslateTest::testAssign',
     ),
     91 => 
     array (
+      0 => 'Test\\Translate\\TranslateTest::testAssign',
     ),
     93 => 
     array (
@@ -47,6 +52,7 @@ $coverage->setData(array (
     104 => NULL,
     106 => 
     array (
+      0 => 'Test\\Translate\\TranslateTest::testAssign',
     ),
     108 => NULL,
     109 => 
@@ -69,7 +75,9 @@ $coverage->setData(array (
   ),
 ));
 $coverage->setTests(array (
-  'UNCOVERED_FILES_FROM_WHITELIST' => NULL,
+  'Test\\Translate\\TranslateTest::testSetLanguage' => 0,
+  'Test\\Translate\\TranslateTest::testAssign' => 4,
+  'Test\\Translate\\TranslateTest::testTranslate' => 0,
 ));
 
 $filter = $coverage->filter();

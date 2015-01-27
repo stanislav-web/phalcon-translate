@@ -14,6 +14,10 @@ use Translate\Translate;
  */
 class TranslateTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @const testing class
+     */
+    const TEST_CLASS =   'Translate\Translate';
 
     /**
      * Init class object
@@ -38,7 +42,7 @@ class TranslateTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->reflection       = new \ReflectionClass('Translate\Translate');
+        $this->reflection       = new \ReflectionClass(self::TEST_CLASS);
         $this->translate        = new Translate();
     }
 
@@ -57,6 +61,28 @@ class TranslateTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetLanguage() {
 
+        // 1. check method exist
+
+        $this->assertTrue(
+            method_exists($this->translate, 'setLanguage'),
+            '[-] Class Translate must have method setLanguage()'
+        );
+
+        // 2. check method modifier
+
+        $modifiers = (new \ReflectionMethod(self::TEST_CLASS, 'setLanguage'))->getModifiers();
+        $this->assertEquals(['public'], \Reflection::getModifierNames($modifiers),
+            "[-] setLanguage() method must be as public"
+        );
+
+        $setLanguage = $this->translate->setLanguage('en');
+
+        // 3. check instance of method
+
+        $this->assertInstanceOf($this->reflection->getName(), $setLanguage,
+            "[-] setLanguage() method must be as instance of ".self::TEST_CLASS
+        );
+
     }
 
     /**
@@ -64,6 +90,27 @@ class TranslateTest extends \PHPUnit_Framework_TestCase
      */
     public function testAssign() {
 
+        // 1. check method exist
+
+        $this->assertTrue(
+            method_exists($this->translate, 'assign'),
+            '[-] Class Translate must have method assign()'
+        );
+
+        // 2. check method modifier
+
+        $modifiers = (new \ReflectionMethod(self::TEST_CLASS, 'assign'))->getModifiers();
+        $this->assertEquals(['public'], \Reflection::getModifierNames($modifiers),
+            "[-] assign() method must be as public"
+        );
+
+        $assign = $this->translate->assign('part');
+
+        // 3. check instance of method
+
+        $this->assertInstanceOf($this->reflection->getName(), $assign,
+            "[-] assign() method must be as instance of ".self::TEST_CLASS
+        );
     }
 
     /**
@@ -71,5 +118,18 @@ class TranslateTest extends \PHPUnit_Framework_TestCase
      */
     public function testTranslate() {
 
+        // 1. check method exist
+
+        $this->assertTrue(
+            method_exists($this->translate, 'translate'),
+            '[-] Class Translate must have method translate()'
+        );
+
+        // 2. check method modifier
+
+        $modifiers = (new \ReflectionMethod(self::TEST_CLASS, 'translate'))->getModifiers();
+        $this->assertEquals(['public'], \Reflection::getModifierNames($modifiers),
+            "[-] translate() method must be as public"
+        );
     }
 }

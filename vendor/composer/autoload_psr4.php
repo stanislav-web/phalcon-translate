@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Tranlsate\\' => array($baseDir . '/src/Translate'),
-    'Test\\Tranlsate\\' => array($baseDir . '/phpunit/src/Translate'),
+    'Translate\\' => array($baseDir . '/src/Translate'),
+    'Test\\Translate\\' => array($baseDir . '/phpunit/src/Translate'),
 );

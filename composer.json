@@ -4,7 +4,8 @@
     "type": "library",
     "keywords" : [
         "phalcon",
-        "phalcon translate"
+        "phalcon translate",
+        "phalcon partial translate"
     ],
     "support": {
         "issues": "https://github.com/stanislav-web/phalcon-translate/issues"
