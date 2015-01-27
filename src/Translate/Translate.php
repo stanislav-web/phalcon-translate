@@ -1,7 +1,7 @@
 <?php
 namespace Translate;
 use Phalcon\Exception;
-use \Phalcon\Translate\Adapter\NativeArray as TranslateAdapter;
+use \Phalcon\Translate\Adapter\NativeArray as TranslateAdapterArray;
 
 /**
  * Translate service class
@@ -13,7 +13,7 @@ use \Phalcon\Translate\Adapter\NativeArray as TranslateAdapter;
  * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class Translate extends TranslateAdapter {
+class Translate {
 
     /**
      * Translate directory path
@@ -38,6 +38,13 @@ class Translate extends TranslateAdapter {
      * @var array
      */
     private $required = [];
+
+    /**
+     * Translate adapter
+     *
+     * @var \Phalcon\Translate\Adapter\NativeArray $adapter
+     */
+    private $adapter;
 
     /**
      * Define an empty constructor. To extend of parent
@@ -71,7 +78,8 @@ class Translate extends TranslateAdapter {
      * Get content from loaded translate file
      *
      * @param string $signature
-     * @return void
+     * @throws Exception
+     * @return \Phalcon\Translate\Adapter\NativeArray
      */
     public function get($signature) {
 
@@ -84,12 +92,33 @@ class Translate extends TranslateAdapter {
                 $content = require_once $file;
                 $this->required[$file] = true;
 
-                parent::__construct(['content' => $content]);
+                // setup signature
+                $this->adapter = new TranslateAdapterArray(['content' => [
+                    $signature => $content
+                ]]);
 
+                // get selected signature
+                $this->adapter->offsetGet($signature);
+                return $this;
             }
             else {
                 throw new Exception('Could not find translate file: '.$file);
             }
         }
+    }
+
+    /**
+     * Translate original string
+     * @param   string     $string
+     * @param   null $placeholders
+     * @return  mixed
+     */
+    public function translate($string, $placeholders = null) {
+
+        if ($this->adapter->exists($string) === true) {
+            return $index;
+        }
+        $index = $this->adapter->query($string, $placeholders);
+        return $index;
     }
 }
