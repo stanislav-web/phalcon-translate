@@ -1,0 +1,38 @@
+{
+    "name": "stanislav-web/phalcon-translate",
+    "description": "Phalcon Translate (Wrapper). Simple way to translate your costom part of text :-)",
+    "type": "library",
+    "keywords" : [
+        "phalcon",
+        "phalcon translate"
+    ],
+    "support": {
+        "issues": "https://github.com/stanislav-web/phalcon-translate/issues"
+    },
+    "minimum-stability": "stable",
+    "homepage" : "https://github.com/stanislav-web/phalcon-translate",
+    "license" : "MIT",
+    "authors" : [{
+        "name": "Stanislav WEB",
+        "email": "stanisov@gmail.com",
+        "homepage": "http://reds.com",
+        "role": "Developer"
+    }],
+
+    "require" : {
+        "php" : ">=5.4.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Tranlsate\\": "src/Translate"
+        },
+        "classmap": ["phpunit/src/Translate"]
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Tranlsate\\": "phpunit/src/Translate"
+        }
+    }
+}
