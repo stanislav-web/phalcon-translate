@@ -65,6 +65,7 @@ class Translate {
 
     /**
      * Set preferred or selected language
+     *
      * @param string $language
      * @return Translate
      */
@@ -75,13 +76,13 @@ class Translate {
     }
 
     /**
-     * Get content from loaded translate file
+     * Assign content to loaded translate file
      *
      * @param string $signature
      * @throws Exception
      * @return \Phalcon\Translate\Adapter\NativeArray
      */
-    public function get($signature) {
+    public function assign($signature) {
 
         $file = $this->path.$this->language.DIRECTORY_SEPARATOR.$signature.'.php';
 

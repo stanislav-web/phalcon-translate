@@ -34,6 +34,7 @@ class TranslateTest extends \PHPUnit_Framework_TestCase
      *
      * @uses Init
      * @uses \ReflectionClass
+     * @covers \Translate\Translate::__construct()
      */
     public function setUp()
     {
@@ -49,5 +50,26 @@ class TranslateTest extends \PHPUnit_Framework_TestCase
     public function tearDown()
     {
         $this->translate = null;
+    }
+
+    /**
+     * @covers \Translate\Translate::setLanguage()
+     */
+    public function testSetLanguage() {
+
+    }
+
+    /**
+     * @covers \Translate\Translate::assign()
+     */
+    public function testAssign() {
+
+    }
+
+    /**
+     * @covers \Translate\Translate::translate()
+     */
+    public function testTranslate() {
+
     }
 }
