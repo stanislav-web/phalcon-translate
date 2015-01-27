@@ -38,8 +38,8 @@ class TranslateTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->reflection = new \ReflectionClass('Translate\Translate');
-        $this->translate       = new Translate();
+        $this->reflection       = new \ReflectionClass('Translate\Translate');
+        $this->translate        = new Translate();
     }
 
     /**

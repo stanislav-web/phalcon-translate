@@ -10,62 +10,62 @@ $coverage->setData(array (
     array (
     ),
     64 => NULL,
-    72 => 
+    73 => 
     array (
     ),
-    74 => 
+    75 => 
     array (
     ),
-    75 => NULL,
-    86 => 
+    76 => NULL,
+    87 => 
     array (
     ),
-    88 => 
+    89 => 
     array (
     ),
-    90 => 
-    array (
-    ),
-    92 => 
+    91 => 
     array (
     ),
     93 => 
     array (
     ),
-    96 => 
+    94 => 
     array (
     ),
-    98 => 
+    97 => 
     array (
     ),
-    101 => 
+    99 => 
     array (
     ),
     102 => 
     array (
     ),
-    103 => NULL,
-    105 => 
+    103 => 
     array (
     ),
-    107 => NULL,
-    108 => 
+    104 => NULL,
+    106 => 
     array (
     ),
-    118 => 
+    108 => NULL,
+    109 => 
     array (
     ),
     119 => 
     array (
     ),
-    120 => NULL,
-    121 => 
+    120 => 
     array (
     ),
+    121 => NULL,
     122 => 
     array (
     ),
-    123 => NULL,
+    123 => 
+    array (
+    ),
+    124 => NULL,
   ),
 ));
 $coverage->setTests(array (

@@ -28,7 +28,6 @@
 
     <filter>
         <blacklist>
-            <directory suffix=".php">./build</directory>
             <directory suffix=".php">./vendor</directory>
         </blacklist>
         <whitelist processUncoveredFilesFromWhitelist="true">
