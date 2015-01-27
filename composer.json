@@ -25,14 +25,14 @@
 
     "autoload": {
         "psr-4": {
-            "Tranlsate\\": "src/Translate"
+            "Translate\\": "src/Translate"
         },
         "classmap": ["phpunit/src/Translate"]
     },
 
     "autoload-dev": {
         "psr-4": {
-            "Test\\Tranlsate\\": "phpunit/src/Translate"
+            "Test\\Translate\\": "phpunit/src/Translate"
         }
     }
 }
