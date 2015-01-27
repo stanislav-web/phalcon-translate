@@ -2,7 +2,7 @@
 <!-- Setup test files and directories -->
 <phpunit    backupGlobals="false"
             backupStaticAttributes="false"
-            bootstrap="./phpunit/bootstrap.php"
+            bootstrap="./vendor/autoload.php"
             cacheTokens="false"
             colors="true"
             convertErrorsToExceptions="true"
@@ -30,7 +30,6 @@
         <blacklist>
             <directory suffix=".php">./build</directory>
             <directory suffix=".php">./vendor</directory>
-            <file>./phpunit/bootstrap.php</file>
         </blacklist>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
@@ -42,7 +41,6 @@
              yui="true" highlight="true"
              lowUpperBound="50" highLowerBound="80" />
         <log type="coverage-clover" target="./phpunit/log/coverage.xml"/>
-        <log type="coverage-php" target="./phpunit/log/coverage.php"/>
         <log type="coverage-text" target="php://stdout" />
     </logging>
 
