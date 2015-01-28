@@ -1,6 +1,6 @@
 {
     "name": "stanislav-web/phalcon-translate",
-    "description": "Phalcon Translate (Wrapper). Simple way to translate your costom part of text :-)",
+    "description": "Phalcon Translate Service. Simple way to translate your costom part of templates :-)",
     "type": "library",
     "keywords" : [
         "phalcon",
@@ -34,5 +34,10 @@
         "psr-4": {
             "Test\\Translate\\": "phpunit/src/Translate"
         }
+    },
+    "suggest": {
+        "stanislav-web/phalcon-searcher": "Phalcon Database Searcher. This is the search service is designed to search multiple SQL tables. Convenient to use autocomplete, search documents, search the whole site.",
+        "stanislav-web/phalcon-ulogin": "Phalcon ULogin. The authorization form uLogin through social networks",
+        "stanislav-web/phalcon-uploader": "Phalcon files uploader. Handling and downloading files for Phalcon projects. Allowed multiple files download, filters etc..."
     }
 }
