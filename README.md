@@ -54,7 +54,7 @@ return [
     'MY ACCOUNT'    =>  'My Account',
     'LOGIN'         =>  'Log in',
     'LOGOUT'        =>  'Log out',
-    'WELCOME'       =>  'Welcome, %s! We glad to see you',
+    'WELCOME'       =>  'Welcome, %s! We glad to see you! You are %d',
 ];
 ```
 #### configuration and use
@@ -80,8 +80,7 @@ return [
     echo $t->translate('LOGIN');
     
     // translate by template variable
-    
-    printf($t->translate('WELLCOME'), 'User');
+    printf($t->translate('WELLCOME'), 'User', 100); // Output: Welcome,User! We glad to see you! You are 100
 ```
 
 ##[Issues](https://github.com/stanislav-web/phalcon-translate/issues "Issues")
