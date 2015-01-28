@@ -1,18 +1,18 @@
 <?php
 namespace Test\Translate;
-use Translate\Translate;
+use Translate\Translator;
 
 /**
- * Class TranslateTest
+ * Class TranslatorTest
  *
  * @package Test\Translate
- * @subpackage Test\Translate\TranslateTest
+ * @subpackage Test\Translate\TranslatorTest
  * @since   PHP >=5.4.28
  * @version 1.0
  * @author  Stanislav WEB | Lugansk <stanisov@gmail.com>
  *
  */
-class TranslateTest extends \PHPUnit_Framework_TestCase
+class TranslatorTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -38,8 +38,8 @@ class TranslateTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->reflection       = new \ReflectionClass('Translate\Translate');
-        $this->translate        = new Translate();
+        $this->reflection       = new \ReflectionClass('Translate\Translator');
+        $this->translate        = new Translator();
     }
 
     /**
