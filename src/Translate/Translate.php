@@ -82,7 +82,7 @@ class Translate {
      *
      * @param string $signature
      * @throws Exception
-     * @return \Phalcon\Translate\Adapter\NativeArray
+     * @return Translate|null
      */
     public function assign($signature) {
 
