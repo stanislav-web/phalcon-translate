@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1422387319">
-  <project timestamp="1422387319">
+<coverage generated="1422442939">
+  <project timestamp="1422442939">
     <package name="Translate">
-      <file name="/Users/stanislavmenshykh/phalcon.local/vendor/stanislav-web/phalcon-translate/src/Translate/Translate.php">
-        <class name="Translate" namespace="Translate" fullPackage="Plugins.Plugins" package="Plugins" subpackage="Plugins">
-          <metrics methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="6" elements="23" coveredelements="7"/>
+      <file name="/Users/stanislavmenshykh/phalcon.local/vendor/stanislav-web/phalcon-translate/src/Translate/Translator.php">
+        <class name="Translator" namespace="Translate" fullPackage="Translate.Translate" package="Translate" subpackage="Translate">
+          <metrics methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="15" elements="22" coveredelements="17"/>
         </class>
-        <line num="60" type="method" name="setTranslatePath" crap="2" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="63" type="stmt" count="0"/>
-        <line num="72" type="method" name="setLanguage" crap="1" count="1"/>
-        <line num="73" type="stmt" count="1"/>
-        <line num="75" type="stmt" count="1"/>
-        <line num="85" type="method" name="assign" crap="5.32" count="1"/>
-        <line num="87" type="stmt" count="1"/>
-        <line num="89" type="stmt" count="1"/>
-        <line num="91" type="stmt" count="1"/>
-        <line num="93" type="stmt" count="0"/>
-        <line num="94" type="stmt" count="0"/>
-        <line num="97" type="stmt" count="0"/>
-        <line num="99" type="stmt" count="0"/>
-        <line num="102" type="stmt" count="0"/>
-        <line num="103" type="stmt" count="0"/>
+        <line num="63" type="method" name="setTranslatePath" crap="1" count="1"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="75" type="method" name="setLanguage" crap="1" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="88" type="method" name="assign" crap="3.01" count="2"/>
+        <line num="90" type="stmt" count="2"/>
+        <line num="92" type="stmt" count="2"/>
+        <line num="94" type="stmt" count="2"/>
+        <line num="96" type="stmt" count="1"/>
+        <line num="97" type="stmt" count="1"/>
+        <line num="101" type="stmt" count="1"/>
+        <line num="103" type="stmt" count="1"/>
         <line num="106" type="stmt" count="1"/>
-        <line num="109" type="stmt" count="0"/>
-        <line num="117" type="method" name="translate" crap="6" count="0"/>
-        <line num="119" type="stmt" count="0"/>
-        <line num="120" type="stmt" count="0"/>
-        <line num="122" type="stmt" count="0"/>
-        <line num="123" type="stmt" count="0"/>
-        <metrics loc="124" ncloc="59" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="6" elements="23" coveredelements="7"/>
+        <line num="108" type="stmt" count="1"/>
+        <line num="111" type="stmt" count="1"/>
+        <line num="114" type="stmt" count="0"/>
+        <line num="122" type="method" name="translate" crap="3.19" count="1"/>
+        <line num="125" type="stmt" count="1"/>
+        <line num="126" type="stmt" count="0"/>
+        <line num="128" type="stmt" count="0"/>
+        <metrics loc="130" ncloc="61" classes="1" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="15" elements="22" coveredelements="17"/>
       </file>
     </package>
-    <metrics files="1" loc="124" ncloc="59" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="6" elements="23" coveredelements="7"/>
+    <metrics files="1" loc="130" ncloc="61" classes="1" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="15" elements="22" coveredelements="17"/>
   </project>
 </coverage>

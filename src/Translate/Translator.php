@@ -1,19 +1,20 @@
 <?php
 namespace Translate;
 use Phalcon\Exception;
-use \Phalcon\Translate\Adapter\NativeArray as TranslateAdapterArray;
+use Phalcon\Translate\Adapter\NativeArray as TranslateAdapterArray;
 
 /**
  * Translate service class
  *
- * @package   Plugins
- * @subpackage   Plugins\Translate
+ * @package   Translate
+ * @subpackage   Translate\Translator
  * @since     PHP >=5.4
  * @version   1.0
  * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class Translate {
+class Translator
+{
 
     /**
      * Translate directory path
@@ -47,18 +48,20 @@ class Translate {
     private $adapter;
 
     /**
-     * Define an empty constructor. To extend of parent
+     * Translate adapter
+     *
+     * @var \Phalcon\Translate\Adapter\NativeArray $adapter
      */
-    public function __construct() {}
+    private $signature  = '';
 
     /**
      * Setup translate path
      *
      * @param string $path
-     * @return Translate
+     * @return Translator
      */
     public function setTranslatePath($path) {
-        $this->path =   $path;
+        $this->path = $path;
 
         return $this;
     }
@@ -67,10 +70,10 @@ class Translate {
      * Set preferred or selected language
      *
      * @param string $language
-     * @return Translate
+     * @return Translator
      */
     public function setLanguage($language) {
-        $this->language =   $language;
+        $this->language = $language;
 
         return $this;
     }
@@ -80,26 +83,28 @@ class Translate {
      *
      * @param string $signature
      * @throws Exception
-     * @return \Phalcon\Translate\Adapter\NativeArray
+     * @return Translator|null
      */
     public function assign($signature) {
 
         $file = $this->path.$this->language.DIRECTORY_SEPARATOR.$signature.'.php';
 
-        if(!isset($this->required[$file])) {
+        if(isset($this->required[$file]) === false) {
 
-            if (file_exists($file)) {
+            if (file_exists($file) === true) {
 
                 $content = require_once $file;
                 $this->required[$file] = true;
 
-                // setup signature
+
+                // assign to translate
                 $this->adapter = new TranslateAdapterArray(['content' => [
                     $signature => $content
                 ]]);
 
-                // get selected signature
-                $this->adapter->offsetGet($signature);
+                // setup signature
+                $this->signature = $this->adapter->offsetGet($signature);
+
                 return $this;
             }
             else {
@@ -110,16 +115,16 @@ class Translate {
 
     /**
      * Translate original string
+     *
      * @param   string     $string
-     * @param   null $placeholders
-     * @return  mixed
+     * @return  string
      */
-    public function translate($string, $placeholders = null) {
+    public function translate($string) {
 
-        if ($this->adapter->exists($string) === true) {
-            return $index;
+        // get selected signature
+        if (array_key_exists($string, $this->signature) === false) {
+            return $string;
         }
-        $index = $this->adapter->query($string, $placeholders);
-        return $index;
+        return $this->signature[$string];
     }
 }

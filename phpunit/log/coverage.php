@@ -1,90 +1,101 @@
 <?php
 $coverage = new PHP_CodeCoverage;
 $coverage->setData(array (
-  '/Users/stanislavmenshykh/phalcon.local/vendor/stanislav-web/phalcon-translate/src/Translate/Translate.php' => 
+  '/Users/stanislavmenshykh/phalcon.local/vendor/stanislav-web/phalcon-translate/src/Translate/Translator.php' => 
   array (
-    61 => 
+    64 => 
     array (
+      0 => 'Test\\Translate\\TranslatorTest::testSetTranslatePath',
     ),
-    63 => 
+    66 => 
     array (
+      0 => 'Test\\Translate\\TranslatorTest::testSetTranslatePath',
     ),
-    64 => NULL,
-    73 => 
+    67 => NULL,
+    76 => 
     array (
-      0 => 'Test\\Translate\\TranslateTest::testSetLanguage',
+      0 => 'Test\\Translate\\TranslatorTest::testSetLanguage',
     ),
-    75 => 
+    78 => 
     array (
-      0 => 'Test\\Translate\\TranslateTest::testSetLanguage',
+      0 => 'Test\\Translate\\TranslatorTest::testSetLanguage',
     ),
-    76 => NULL,
-    87 => 
+    79 => NULL,
+    90 => 
     array (
-      0 => 'Test\\Translate\\TranslateTest::testAssign',
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
+      1 => 'Test\\Translate\\TranslatorTest::testAssignException',
     ),
-    89 => 
+    92 => 
     array (
-      0 => 'Test\\Translate\\TranslateTest::testAssign',
-    ),
-    91 => 
-    array (
-      0 => 'Test\\Translate\\TranslateTest::testAssign',
-    ),
-    93 => 
-    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
+      1 => 'Test\\Translate\\TranslatorTest::testAssignException',
     ),
     94 => 
     array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
+      1 => 'Test\\Translate\\TranslatorTest::testAssignException',
+    ),
+    96 => 
+    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
     97 => 
     array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
-    99 => 
+    101 => 
     array (
-    ),
-    102 => 
-    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
     103 => 
     array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
-    104 => NULL,
     106 => 
     array (
-      0 => 'Test\\Translate\\TranslateTest::testAssign',
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
-    108 => NULL,
-    109 => 
+    108 => 
+    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
+    ),
+    109 => NULL,
+    111 => 
+    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssignException',
+    ),
+    113 => NULL,
+    114 => 
     array (
     ),
-    119 => 
+    125 => 
+    array (
+      0 => 'Test\\Translate\\TranslatorTest::testTranslate',
+    ),
+    126 => 
     array (
     ),
-    120 => 
+    127 => NULL,
+    128 => 
     array (
     ),
-    121 => NULL,
-    122 => 
-    array (
-    ),
-    123 => 
-    array (
-    ),
-    124 => NULL,
+    129 => NULL,
   ),
 ));
 $coverage->setTests(array (
-  'Test\\Translate\\TranslateTest::testSetLanguage' => 0,
-  'Test\\Translate\\TranslateTest::testAssign' => 4,
-  'Test\\Translate\\TranslateTest::testTranslate' => 0,
+  'Test\\Translate\\TranslatorTest::testSetTranslatePath' => 0,
+  'Test\\Translate\\TranslatorTest::testSetLanguage' => 0,
+  'Test\\Translate\\TranslatorTest::testAssign' => 0,
+  'Test\\Translate\\TranslatorTest::testAssignException' => 0,
+  'Test\\Translate\\TranslatorTest::testTranslate' => 4,
 ));
 
 $filter = $coverage->filter();
 $filter->setBlacklistedFiles(array (
 ));
 $filter->setWhitelistedFiles(array (
-  '/Users/stanislavmenshykh/phalcon.local/vendor/stanislav-web/phalcon-translate/src/Translate/Translate.php' => true,
+  '/Users/stanislavmenshykh/phalcon.local/vendor/stanislav-web/phalcon-translate/src/Translate/Translator.php' => true,
 ));
 
 return $coverage;
