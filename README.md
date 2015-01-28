@@ -29,13 +29,13 @@ _(Do not forget to include the composer autoloader)_
 Or manual require in your loader service
 ```php
     $loader->registerNamespaces([
-        'Translate\Translate' => 'path to src'
+        'Translate\Translator' => 'path to src'
     ]);
 ```    
 You can create an injectable service
 ```php
     $this->di['translate'] = function() {
-        return new Translate\Translate();
+        return new Translate\Translator();
     };
 ```
 ## Usage
