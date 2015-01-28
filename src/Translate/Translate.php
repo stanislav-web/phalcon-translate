@@ -6,14 +6,14 @@ use Phalcon\Translate\Adapter\NativeArray as TranslateAdapterArray;
 /**
  * Translate service class
  *
- * @package   Plugins
- * @subpackage   Plugins\Translate
+ * @package   Translate
+ * @subpackage   Translate\Translator
  * @since     PHP >=5.4
  * @version   1.0
  * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class Translate 
+class Translator
 {
 
     /**
