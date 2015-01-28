@@ -58,7 +58,7 @@ class Translator
      * Setup translate path
      *
      * @param string $path
-     * @return Translate
+     * @return Translator
      */
     public function setTranslatePath($path) {
         $this->path = $path;
@@ -70,7 +70,7 @@ class Translator
      * Set preferred or selected language
      *
      * @param string $language
-     * @return Translate
+     * @return Translator
      */
     public function setLanguage($language) {
         $this->language = $language;
@@ -83,7 +83,7 @@ class Translator
      *
      * @param string $signature
      * @throws Exception
-     * @return Translate|null
+     * @return Translator|null
      */
     public function assign($signature) {
 
