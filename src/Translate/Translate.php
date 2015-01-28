@@ -13,7 +13,8 @@ use Phalcon\Translate\Adapter\NativeArray as TranslateAdapterArray;
  * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class Translate {
+class Translate 
+{
 
     /**
      * Translate directory path
@@ -51,7 +52,7 @@ class Translate {
      *
      * @var \Phalcon\Translate\Adapter\NativeArray $adapter
      */
-    private $signature  =   '';
+    private $signature  = '';
 
     /**
      * Setup translate path
@@ -60,7 +61,7 @@ class Translate {
      * @return Translate
      */
     public function setTranslatePath($path) {
-        $this->path =   $path;
+        $this->path = $path;
 
         return $this;
     }
@@ -72,7 +73,7 @@ class Translate {
      * @return Translate
      */
     public function setLanguage($language) {
-        $this->language =   $language;
+        $this->language = $language;
 
         return $this;
     }
@@ -82,15 +83,15 @@ class Translate {
      *
      * @param string $signature
      * @throws Exception
-     * @return \Phalcon\Translate\Adapter\NativeArray
+     * @return Translate|null
      */
     public function assign($signature) {
 
         $file = $this->path.$this->language.DIRECTORY_SEPARATOR.$signature.'.php';
 
-        if(!isset($this->required[$file])) {
+        if(isset($this->required[$file]) === false) {
 
-            if (file_exists($file)) {
+            if (file_exists($file) === true) {
 
                 $content = require_once $file;
                 $this->required[$file] = true;
