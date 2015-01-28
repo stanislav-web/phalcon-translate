@@ -34,7 +34,6 @@ class TranslatorTest extends \PHPUnit_Framework_TestCase
      *
      * @uses Init
      * @uses \ReflectionClass
-     * @covers \Translate\Translate::__construct()
      */
     public function setUp()
     {
@@ -53,21 +52,21 @@ class TranslatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Translate\Translate::setLanguage()
+     * @covers \Translate\Translator::setLanguage()
      */
     public function testSetLanguage() {
 
     }
 
     /**
-     * @covers \Translate\Translate::assign()
+     * @covers \Translate\Translator::assign()
      */
     public function testAssign() {
 
     }
 
     /**
-     * @covers \Translate\Translate::translate()
+     * @covers \Translate\Translator::translate()
      */
     public function testTranslate() {
 
