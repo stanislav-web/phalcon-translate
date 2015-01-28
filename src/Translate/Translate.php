@@ -1,7 +1,7 @@
 <?php
 namespace Translate;
 use Phalcon\Exception;
-use \Phalcon\Translate\Adapter\NativeArray as TranslateAdapterArray;
+use Phalcon\Translate\Adapter\NativeArray as TranslateAdapterArray;
 
 /**
  * Translate service class
@@ -47,9 +47,11 @@ class Translate {
     private $adapter;
 
     /**
-     * Define an empty constructor. To extend of parent
+     * Translate adapter
+     *
+     * @var \Phalcon\Translate\Adapter\NativeArray $adapter
      */
-    public function __construct() {}
+    private $signature  =   '';
 
     /**
      * Setup translate path
@@ -93,13 +95,15 @@ class Translate {
                 $content = require_once $file;
                 $this->required[$file] = true;
 
-                // setup signature
+
+                // assign to translate
                 $this->adapter = new TranslateAdapterArray(['content' => [
                     $signature => $content
                 ]]);
 
-                // get selected signature
-                $this->adapter->offsetGet($signature);
+                // setup signature
+                $this->signature = $this->adapter->offsetGet($signature);
+
                 return $this;
             }
             else {
@@ -110,16 +114,16 @@ class Translate {
 
     /**
      * Translate original string
+     *
      * @param   string     $string
-     * @param   null $placeholders
-     * @return  mixed
+     * @return  string
      */
-    public function translate($string, $placeholders = null) {
+    public function translate($string) {
 
-        if ($this->adapter->exists($string) === true) {
-            return $index;
+        // get selected signature
+        if (array_key_exists($string, $this->signature) === false) {
+            return $string;
         }
-        $index = $this->adapter->query($string, $placeholders);
-        return $index;
+        return $this->signature[$string];
     }
 }
