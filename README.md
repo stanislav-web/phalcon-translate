@@ -61,11 +61,14 @@ return [
 ```php
     // get translate service
     $translate = $this->di->get('translate');
-    $translate->setTranslatePath(/app/Modules/Frontend/languages/') // forward slash must be
-                    ->setLanguage('fr'); // lang can get from headers or cookies
     
-    // so now you have a directory for "Franch".. Next you need to choise a part of translate
-    // i do something like this
+     // forward slash must be...
+    $translate->setTranslatePath(/app/Modules/Frontend/languages/')
+                ->setLanguage('en'); // lang can get from headers or cookies
+    
+    // so now you have a directory for "English".. 
+    // Next you need to choise a part of translate.
+    // I do something like this
     
     $this->view->setVars('t', $translate);
     
