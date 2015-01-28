@@ -63,7 +63,7 @@ return [
     $translate = $this->di->get('translate');
     
      // forward slash must be...  // lang can get from headers or cookies
-    $translate->setTranslatePath(/app/Modules/Frontend/languages/')->setLanguage('en');
+    $translate->setTranslatePath('/app/Modules/Frontend/languages/')->setLanguage('en');
     
     // so now you have a directory for "English".. 
     // Next you need to choise a part of translate.
