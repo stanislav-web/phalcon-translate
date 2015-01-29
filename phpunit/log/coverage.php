@@ -3,44 +3,44 @@ $coverage = new PHP_CodeCoverage;
 $coverage->setData(array (
   '/Users/stanislavmenshykh/phalcon.local/vendor/stanislav-web/phalcon-translate/src/Translate/Translator.php' => 
   array (
-    64 => 
+    65 => 
     array (
       0 => 'Test\\Translate\\TranslatorTest::testSetTranslatePath',
     ),
-    66 => 
+    67 => 
     array (
       0 => 'Test\\Translate\\TranslatorTest::testSetTranslatePath',
     ),
-    67 => NULL,
-    76 => 
+    68 => NULL,
+    77 => 
     array (
       0 => 'Test\\Translate\\TranslatorTest::testSetLanguage',
     ),
-    78 => 
+    79 => 
     array (
       0 => 'Test\\Translate\\TranslatorTest::testSetLanguage',
     ),
-    79 => NULL,
-    90 => 
+    80 => NULL,
+    91 => 
     array (
       0 => 'Test\\Translate\\TranslatorTest::testAssign',
       1 => 'Test\\Translate\\TranslatorTest::testAssignException',
     ),
-    92 => 
+    93 => 
     array (
       0 => 'Test\\Translate\\TranslatorTest::testAssign',
       1 => 'Test\\Translate\\TranslatorTest::testAssignException',
     ),
-    94 => 
+    95 => 
     array (
       0 => 'Test\\Translate\\TranslatorTest::testAssign',
       1 => 'Test\\Translate\\TranslatorTest::testAssignException',
-    ),
-    96 => 
-    array (
-      0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
     97 => 
+    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
+    ),
+    98 => 
     array (
       0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
@@ -69,18 +69,29 @@ $coverage->setData(array (
     114 => 
     array (
     ),
-    125 => 
+    127 => 
     array (
-      0 => 'Test\\Translate\\TranslatorTest::testTranslate',
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
-    126 => 
-    array (
-    ),
-    127 => NULL,
     128 => 
     array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
     ),
-    129 => NULL,
+    129 => 
+    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
+    ),
+    130 => NULL,
+    131 => 
+    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
+    ),
+    132 => NULL,
+    134 => 
+    array (
+      0 => 'Test\\Translate\\TranslatorTest::testAssign',
+    ),
+    136 => NULL,
   ),
 ));
 $coverage->setTests(array (
@@ -88,7 +99,6 @@ $coverage->setTests(array (
   'Test\\Translate\\TranslatorTest::testSetLanguage' => 0,
   'Test\\Translate\\TranslatorTest::testAssign' => 0,
   'Test\\Translate\\TranslatorTest::testAssignException' => 0,
-  'Test\\Translate\\TranslatorTest::testTranslate' => 4,
 ));
 
 $filter = $coverage->filter();

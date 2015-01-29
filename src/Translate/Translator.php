@@ -48,11 +48,12 @@ class Translator
     private $adapter;
 
     /**
-     * Translate adapter
+     * Adapter signature
      *
-     * @var \Phalcon\Translate\Adapter\NativeArray $adapter
+     * @var array
+     * @access private
      */
-    private $signature  = '';
+    private $signature  = [];
 
     /**
      * Setup translate path
@@ -96,7 +97,6 @@ class Translator
                 $content = require_once $file;
                 $this->required[$file] = true;
 
-
                 // assign to translate
                 $this->adapter = new TranslateAdapterArray(['content' => [
                     $signature => $content
@@ -116,15 +116,22 @@ class Translator
     /**
      * Translate original string
      *
-     * @param   string     $string
-     * @return  string
+     * @param $string
+     * @throws Exception
+     * @return string
      */
     public function translate($string) {
 
         // get selected signature
-        if (array_key_exists($string, $this->signature) === false) {
-            return $string;
+
+        if(empty($this->signature) === false) {
+            if (array_key_exists($string, $this->signature) === false) {
+                return $string;
+            }
+            return $this->signature[$string];
         }
-        return $this->signature[$string];
+        else {
+            throw new Exception('Could not find translate signature');
+        }
     }
 }

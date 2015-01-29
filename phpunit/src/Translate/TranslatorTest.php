@@ -79,6 +79,19 @@ class TranslatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Setup accessible any private (protected) property
+     *
+     * @param $name
+     * @return \ReflectionMethod
+     */
+    protected function getProperty($name)
+    {
+        $prop = $this->reflection->getProperty($name);
+        $prop->setAccessible(true);
+        return $prop;
+    }
+
+    /**
      * @covers \Translate\Translator::setTranslatePath()
      */
     public function testSetTranslatePath() {
@@ -138,6 +151,7 @@ class TranslatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers \Translate\Translator::assign()
+     * @covers \Translate\Translator::translate()
      */
     public function testAssign() {
 
@@ -155,6 +169,20 @@ class TranslatorTest extends \PHPUnit_Framework_TestCase
             "[-] assign() method must be as public"
         );
 
+        // 1. check method exist
+
+        $this->assertTrue(
+            method_exists($this->translate, 'translate'),
+            '[-] Class Translate must have method translate()'
+        );
+
+        // 2. check method modifier
+
+        $modifiers = (new \ReflectionMethod(self::TEST_CLASS, 'translate'))->getModifiers();
+        $this->assertEquals(['public'], \Reflection::getModifierNames($modifiers),
+            "[-] translate() method must be as public"
+        );
+
         $assign = $this->translate
             ->setTranslatePath(self::TEST_PATH)
             ->setLanguage(self::TEST_LANG)
@@ -165,6 +193,39 @@ class TranslatorTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf($this->reflection->getName(), $assign,
             "[-] assign() method must be as instance of ".self::TEST_CLASS
         );
+
+        // 4. check RIGHT and WRONG returns
+
+        $translate = $assign->translate('HOME');
+
+        $this->assertInternalType('string', $translate,
+            "[-] translate() must return type as string if has right"
+        );
+
+        $translate = $assign->translate('WRONG');
+
+        $this->assertInternalType('string', $translate,
+            "[-] translate() must return type as string if has wrong"
+        );
+
+        // 5. check exception
+
+        try {
+
+            // get default property value
+            $reflectionProperty = $this->reflection->getProperty('signature');
+
+            $reflectionProperty->setAccessible(true);
+
+            $this->signature = $reflectionProperty->setValue($this->translate, []);
+            $this->translate->translate('CallException');
+        }
+        catch(\Phalcon\Exception $e) {
+            // Expected exception caught! Woohoo! Ignore it
+            $this->assertInstanceOf('Phalcon\Exception', $e,
+                "[-] Exception must return Phalcon\\Exception instance"
+            );
+        }
     }
 
     /**
@@ -188,36 +249,5 @@ class TranslatorTest extends \PHPUnit_Framework_TestCase
                 "[-] Exception must return Phalcon\\Exception instance"
             );
         }
-    }
-
-    /**
-     * @covers \Translate\Translator::translate()
-     */
-    public function testTranslate() {
-
-        // 1. check method exist
-
-        $this->assertTrue(
-            method_exists($this->translate, 'translate'),
-            '[-] Class Translate must have method translate()'
-        );
-
-        // 2. check method modifier
-
-        $modifiers = (new \ReflectionMethod(self::TEST_CLASS, 'translate'))->getModifiers();
-        $this->assertEquals(['public'], \Reflection::getModifierNames($modifiers),
-            "[-] translate() method must be as public"
-        );
-
-        // check passed param
-
-        $translate = $this->translate
-            ->setTranslatePath(self::TEST_PATH)
-            ->setLanguage(self::TEST_LANG)
-            ->assign(self::TEST_PART)->translate(self::TEST_PART);
-
-        $this->assertContainsOnly('array', [$translate],
-            "[-] The `assign` will passed boolean param in " . $this->reflection->getName()
-        );
     }
 }
