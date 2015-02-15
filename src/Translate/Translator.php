@@ -92,7 +92,7 @@ class Translator
      *
      * @param string $signature
      * @throws Exception
-     * @return Translator|null
+     * @return Translator
      */
     public function assign($signature) {
 
