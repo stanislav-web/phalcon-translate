@@ -6,7 +6,7 @@ Phalcon Translate Service. Simple way to translate your costom part of templates
 ## Changelog
 - 1.2 [FIX, FEATURE] The ability to reuse a set of translations in various services
 - 1.1 Added setDefault() method to watch undefined languages
-- 
+
 ## Compatible
 - PSR-1, PSR-2, PSR-4 Standards
 
