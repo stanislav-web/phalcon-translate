@@ -18,7 +18,7 @@ Phalcon Translate Service. Simple way to translate your costom part of templates
 First update your dependencies through composer. Add to your composer.json:
 ```python
 "require": {
-    "stanislav-web/phalcon-translate": ""1.*""
+    "stanislav-web/phalcon-translate": "1.*"
 }
 ```
 ```python
