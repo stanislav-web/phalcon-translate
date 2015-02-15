@@ -3,6 +3,8 @@
 
 Phalcon Translate Service. Simple way to translate your costom part of templates :-)
 
+- 1.2 [FIX, FEATURE] The ability to reuse a set of translations in various services
+ 
 ## Compatible
 - PSR-1, PSR-2, PSR-4 Standards
 
@@ -14,7 +16,7 @@ Phalcon Translate Service. Simple way to translate your costom part of templates
 First update your dependencies through composer. Add to your composer.json:
 ```python
 "require": {
-    "stanislav-web/phalcon-translate": "1.1-stable"
+    "stanislav-web/phalcon-translate": "1.2-stable"
 }
 ```
 ```python
