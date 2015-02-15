@@ -36,6 +36,11 @@
             "Test\\Translate\\": "phpunit/src/Translate"
         }
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.*-dev"
+        }
+    },
     "suggest": {
         "stanislav-web/phalcon-searcher": "Phalcon Database Searcher. This is the search service is designed to search multiple SQL tables. Convenient to use autocomplete, search documents, search the whole site.",
         "stanislav-web/phalcon-ulogin": "Phalcon ULogin. The authorization form uLogin through social networks",
