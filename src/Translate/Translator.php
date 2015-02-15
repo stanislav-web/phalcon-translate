@@ -109,7 +109,7 @@ class Translator
 
             // assign to translate
             $this->adapter = new TranslateAdapterArray(['content' => [
-                    $signature => $content
+                    $signature => (isset($content)) ? $content : false
             ]]);
         }
 
