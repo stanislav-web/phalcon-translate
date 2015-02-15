@@ -86,7 +86,7 @@ class Translator
 
         return $this;
     }
-
+    
     /**
      * Assign content to loaded translate file
      *
@@ -98,30 +98,25 @@ class Translator
 
         $file = $this->path.$this->language.DIRECTORY_SEPARATOR.$signature.'.php';
 
+        // content does not loaded yet
         if(isset($this->required[$file]) === false) {
 
             if (file_exists($file) === true) {
 
-                $content = require_once $file;
-                $this->required[$file] = true;
-            }
-            else {
-                // get default language
-                $file = $this->path.$this->default.DIRECTORY_SEPARATOR.$signature.'.php';
-                $content = require_once $file;
+                $content = include $file;
                 $this->required[$file] = true;
             }
 
             // assign to translate
             $this->adapter = new TranslateAdapterArray(['content' => [
-                $signature => $content
+                    $signature => $content
             ]]);
-
-             // setup signature
-             $this->signature = $this->adapter->offsetGet($signature);
-
-             return $this;
         }
+
+        // setup signature
+        $this->signature = $this->adapter->offsetGet($signature);
+
+        return $this;
     }
 
     /**
