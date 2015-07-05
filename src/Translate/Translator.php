@@ -113,8 +113,14 @@ class Translator
             ]]);
         }
 
+        // $this->adapter->offsetGet() was thrown error with Phalcon 2.0 (??)
+        $reflection = new \ReflectionClass($this->adapter);
+        $property = $reflection->getProperty('_translate');
+        $property->setAccessible(true);
+        //$this->signature = $this->adapter->offsetGet($signature);
+
         // setup signature
-        $this->signature = $this->adapter->offsetGet($signature);
+        $this->signature = $property->getValue($this->adapter)[$signature];
 
         return $this;
     }
