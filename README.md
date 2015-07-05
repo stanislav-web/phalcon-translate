@@ -4,6 +4,7 @@
 Phalcon Translate Service. Simple way to translate your costom part of templates :-)
 
 ## Changelog
+- 1.3 [FIX] Support for Phalcon 2.x // [Minor fix] Translate Adapter Native offsetGet is not work on 2.0
 - 1.2 [FIX, FEATURE] The ability to reuse a set of translations in various services
 - 1.1 Added setDefault() method to watch undefined languages
 
@@ -12,7 +13,7 @@ Phalcon Translate Service. Simple way to translate your costom part of templates
 
 ## System requirements
 - PHP 5.4.x >
-- Phalcon extension 1.3.x
+- Phalcon extension 1.3.x, 2.x
 
 ## Install
 First update your dependencies through composer. Add to your composer.json:
