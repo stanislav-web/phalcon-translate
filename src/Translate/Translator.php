@@ -106,6 +106,15 @@ class Translator
                 $content = include $file;
                 $this->required[$file] = true;
             }
+            else {
+                // set default path by default language
+                $file = $this->path.$this->default.DIRECTORY_SEPARATOR.$signature.'.php';
+                if (file_exists($file) === true) {
+
+                    $content = include $file;
+                    $this->required[$file] = true;
+                }
+            }
 
             // assign to translate
             $this->adapter = new TranslateAdapterArray(['content' => [
