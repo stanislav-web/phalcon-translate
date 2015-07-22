@@ -167,4 +167,15 @@ class Translator
             throw new Exception('Could not find translate signature');
         }
     }
+
+    /**
+     * Assing and Translate
+     * @param $signature
+     * @param $key
+     * @throws Exception
+     * @return string
+     */
+    public function assignt($signature, $key){
+        return $this->assign($signature)->translate($key);
+    }
 }
